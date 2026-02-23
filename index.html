@@ -34,6 +34,57 @@
     />
   </head>
   <body>
-    <p class="red">under coding</p>
+    <header class="w-[80%] mx-auto">
+      <h2 class="text-3xl text-green-800">Job Application Tracker</h2>
+      <div class="grid grid-cols-3 gap-8">
+        <div class="bg-orange-300 p-5">
+          <p>Total</p>
+          <p id="totalCount">0</p>
+        </div>
+        <div class="bg-green-300 p-5">
+          <p>Interview</p>
+          <p id="interviewCount">0</p>
+        </div>
+        <div class="bg-red-300 p-5">
+          <p>Rejected</p>
+          <p id="rejectedCount">0</p>
+        </div>
+      </div>
+    </header>
+    <hr class="py-5" />
+    <main class="w-[80%] mx-auto">
+      <div>
+        <button class="bg-black text-white px-5 py-2" id="all-filter-btn">
+          All
+        </button>
+        <button class="bg-slate-400 px-5 py-2" id="interview-btn">
+          Interview
+        </button>
+        <button class="bg-slate-400 px-5 py-2 " id="rejected-btn">
+          Rejected
+        </button>
+      </div>
+
+      <section id="ApplicationCard">
+        <!-- content part -->
+        <div>
+          <div class="card">
+            <div class="textStart">
+              <h2 class="text-">Front-End Developer</h2>
+              <p/>Web Designer & Developer</p
+              <p>Los Angels, USA - Full-Time $80,000 - $95,000</p>
+            </div>
+            <div>
+                <button class="btn btn-active btn-primary">Interview</button>
+                <button class="btn btn-active btn-secondary">Rejected</button>
+            </div>
+          </div>
+          <!-- delete  button -->
+          <div >
+            <p><i class="fa-solid fa-trash-can"></i></p>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
