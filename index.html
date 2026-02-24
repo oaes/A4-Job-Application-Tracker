@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Application Tracker</title>
-    <!-- daisy ui -->
+
+
+    <!-- DaisyUI & Tailwind -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- tailwind css -->
-    <style type="text/tailwindcss">
-      @theme {
-        --color-clifford: #da373d;
-      }
-    </style>
-    <!-- font awesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -25,238 +28,106 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+   
+
   <body>
-    <header class="w-[80%] mx-auto">
-      <h2 class="text-4xl text-green-800 mb-3">Job Application Tracker</h2>
-      <div class="grid grid-cols-3 gap-8">
-        <div class="bg-blue-300 p-5">
-          <p>Total</p>
-          <p id="totalCount">0</p>
+    <header class="container">
+      <section class="mx-auto">
+        <div>
+          <h1
+            class="main-title text-center text-black-80 font-extrabold md:text-2xl text-2xl py-8"
+          >
+            Job Application Tracker
+          </h1>
         </div>
-        <div class="bg-green-300 p-5">
-          <p>Interview</p>
-          <p id="interviewCount">0</p>
-        </div>
-        <div class="bg-red-300 p-5">
-          <p>Rejected</p>
-          <p id="rejectedCount">0</p>
-        </div>
-      </div>
-    </header>
-    <hr class="py-5" />
-    <main class="w-[80%] mx-auto">
-      <div class="mb-6">
-        <button onclick="toggleStyle('all-filter-btn')" class="bg-black text-white px-5 py-2" id="all-filter-btn">
-          All
-        </button>
-        <button  onclick="toggleStyle('interview-btn')" class="bg-gray-300  px-5 py-2" id="interview-btn">
-          Interview
-        </button>
-        <button onclick="toggleStyle('rejected-btn')" class="bg-gray-300  px-5 py-2 " id="rejected-btn">
-          Rejected
-        </button>
-      </div>
+      </section>
 
-      <section id="applicationCard" class="space-y-6 mb-5">
-        <!-- content part card 1-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Front-End Developer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Los Angels, USA - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
+      <section class="w-full px-2 mx-auto flex">
+        <div class="stats  mx-auto grid grid-cols-3 mx-auto">
+          <div class="stat place-items-center bg-blue-300 ">
+            <div >Total</div>
+            <div id="totalCount" class="stat-value text">8</div>
           </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
 
-          <!-- content part card 2-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Back-End Developer</h2>
-              <p/>Web Developer</p
-              <p>Arizona, USA - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
+          <div class="stat place-items-center bg-green-200 ">
+            <div>Interview</div>
+            <div id="interviewCount" class="stat-value">0</div>
           </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
 
-          <!-- content part card 3-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">DevOps Specialist</h2>
-              <p/>Web Designer & Developer</p
-              <p>London, UK - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 4-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Web consultant</h2>
-              <p/>Web Expert</p
-              <p>Silicon Vally, USA - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 5-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Wordpress Developer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Canada - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 6-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Front-End Engineer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Los Angels, USA - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 7-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Web Developer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Dhaka, Bangladesh - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 8-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Front-End Developer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Malaysia - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 9-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Shopify Developer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Remote, USA - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
-          </div>
-        </div>
-
-          <!-- content part card 10-->
-        <div class="flex justify-between border p-8">
-          <div class="card space-y-5">
-            <div class="">
-              <h2 class="text-4xl">Front-End Developer</h2>
-              <p/>Web Designer & Developer</p
-              <p>Khulna, Bangladesh - Full-Time $80,000 - $95,000</p>
-            </div>
-            <div>
-                <button class="btn btn-outline btn-primary">Interview</button>
-                <button class="btn btn-outline btn-secondary">Rejected</button>
-            </div>
-          </div>
-          <!-- delete  button -->
-          <div>
-            <p><i class="fa-solid fa-trash-can"></i></p>
+          <div class="stat place-items-center bg-red-200 ">
+            <div >Rejected</div>
+            <div id="rejectedCount" class="stat-value">0</div>
           </div>
         </div>
       </section>
+    </header>
+
+    <main class="container">
+      <div class="mx-auto flex mt-4">
+        <div
+          class="px-4 py-2  text-center section-header items-center w-[80%] mx-auto flex justify-between"
+        >
+          <h2 class="text-xl">Available Jobs</h2>
+          <p
+            id="sectionCount"
+            class="rounded-3xl  md:text-xl"
+          >
+            8 Jobs
+          </p>
+        </div>
+      </div>
+
+      <section class="mx-auto flex justify-center mt-4">
+        <div class="flex gap-3">
+          <button
+            id="tabAll"
+            onclick="showTab('all')"
+            class="tab-btn px-4 py-2 bg-black-500 text-white"
+          >
+            All
+          </button>
+
+          <button
+            id="tabInterview"
+            onclick="showTab('interview')"
+            class="tab-btn px-4 py-2 "
+          >
+            Interview
+          </button>
+
+          <button
+            id="tabRejected"
+            onclick="showTab('rejected')"
+            class="tab-btn px-4 py-2"
+          >
+            Rejected
+          </button>
+        </div>
+      </section>
+      <!--  -->
+
+      <div id="jobContainer" class="w-[80%] mx-auto job-container mt-6"></div>
+
+      <div
+        id="noJobModal"
+        class="mx-auto fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+      >
+        <div
+          class="bg-white rounded-lg p-6 w-[80%] max-w-sm text-center relative"
+        >
+     
+          <h2 class="mt-2 text-xl font-bold mb-4">No Jobs Available</h2>
+          <p class="mb-4">👴🏻👴🏻👴🏻 Stay Tuned!</p>
+          <button
+            id="closeModal"
+            class="bg-black-500 text-white px-4 py-2"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </main>
-    <script src="./script.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
