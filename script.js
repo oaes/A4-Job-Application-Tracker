@@ -2,7 +2,6 @@ let total = document.getElementById("totalCount");
 let interviewCount = document.getElementById("interviewCount");
 let rejectedCount = document.getElementById("rejectedCount");
 
-// const applicationSection = document.getElementById("applicationCard");
 const appSection = document.getElementById("applicationCard");
 console.log(appSection.children.length);
 
@@ -23,17 +22,20 @@ const interviewBtn = document.getElementById("interview-btn");
 const rejectedBtn = document.getElementById("rejected-btn");
 
 function toggleStyle(id) {
-  allFilterBtn.classList.remove("bg-black", "bg-white");
-  interviewBtn.classList.remove("bg-black", "bg-white");
-  rejectedBtn.classList.remove("bg-black", "bg-white");
-
   allFilterBtn.classList.add("bg-gray-300", "text-black");
   interviewBtn.classList.add("bg-gray-300", "text-black");
   rejectedBtn.classList.add("bg-gray-300", "text-black");
 
+  allFilterBtn.classList.remove("bg-black", "text-white");
+  interviewBtn.classList.remove("bg-black", "text-white");
+  rejectedBtn.classList.remove("bg-black", "text-white");
+
   const selected = document.getElementById(id);
   console.log(selected);
   selected.classList.remove("bg-gray-300", "text-black");
-  selected.classList.remove("bg-gray-300", "text-black");
-  selected.classList.remove("bg-gray-300", "text-black");
+  selected.classList.add("bg-black", "text-white");
 }
+
+mainContainer.addEventListener("click", function (event) {
+  console.log(event.target.parentNode.parentNode);
+});
